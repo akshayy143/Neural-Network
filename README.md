@@ -10,3 +10,6 @@ Tensorflow
 
 Keras
 
+GPU CPU
+
+
