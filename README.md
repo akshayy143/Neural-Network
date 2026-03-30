@@ -12,4 +12,6 @@ Keras
 
 GPU CPU
 
+Optimizer
 
+Encoders
