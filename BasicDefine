@@ -1,0 +1,71 @@
+ The Neuron: Architecture & Data Flow
+The basic unit of deep learning, inspired by biological neurons in the brain. 
+Wikipedia
+Wikipedia
+ +1
+Perceptron Model: The simplest form of an artificial neuron. It takes multiple binary inputs, multiplies them by weights, adds a bias, and passes the result through a step function to produce a binary (0 or 1) output.
+Multi-Layer Perceptrons (MLP): A modern feedforward network consisting of at least three layers: an input layer, one or more hidden layers, and an output layer. Unlike basic perceptrons, MLPs use non-linear activation functions, allowing them to solve complex, non-linear problems like XOR.
+Forward Propagation: The process where input data travels through the network. Each neuron calculates a weighted sum of its inputs (
+
+
+), applies an activation function, and passes the output to the next layer until a final prediction is made. 
+Scribd
+Scribd
+ +10
+2. Activation Functions: Introducing Non-Linearity
+Without these, a neural network would just be a giant linear regression model, unable to learn complex patterns. 
+GeeksforGeeks
+GeeksforGeeks
+ +1
+Sigmoid: S-shaped curve that maps inputs to a range between 0 and 1. It is often used for binary classification but can cause training to slow down due to vanishing gradients.
+Tanh (Hyperbolic Tangent): Similar to Sigmoid but maps inputs between -1 and 1. It is zero-centered, which often makes it better for hidden layers than Sigmoid.
+ReLU (Rectified Linear Unit): The most popular choice (
+
+
+
+
+
+
+
+
+
+). it outputs the input directly if positive, otherwise zero. It is computationally efficient and helps networks learn faster.
+Leaky ReLU: A variation of ReLU that allows a small, non-zero gradient when the input is negative (
+
+
+
+
+ for 
+
+). This prevents "dead neurons" where parts of the network stop learning entirely.
+Softmax: Used in the output layer for multi-class classification. It turns raw scores (logits) into probabilities that sum up to 1. 
+Scribd
+Scribd
+ +6
+3. Training Mechanisms: How the Network Learns
+Learning is essentially a process of trial and error followed by adjustment. 
+LinkedIn
+LinkedIn
+ +1
+Loss Functions: A mathematical way to measure "how wrong" the model is.
+MSE (Mean Squared Error): Used for regression; it squares the difference between predicted and actual values.
+Cross-Entropy: Used for classification; it measures the distance between the predicted probability distribution and the actual labels.
+Backpropagation: The "engine" of learning. It uses the chain rule from calculus to calculate how much each weight contributed to the total error, moving backward from the output layer to the input layer.
+Vanishing/Exploding Gradients:
+Vanishing: When gradients become extremely small during backpropagation, causing early layers to stop learning.
+Exploding: When gradients become too large, making the model unstable and "overshooting" the optimal values. 
+Scribd
+Scribd
+ +4
+4. Optimization: Refining the Weights
+Optimizers determine how the weights are updated based on the gradients found during backpropagation. 
+Scribd
+Scribd
+ +3
+Gradient Descent Variants:
+Batch GD: Updates weights after looking at the entire dataset. It's stable but very slow.
+Stochastic GD (SGD): Updates weights after every single example. It's fast but noisy.
+Mini-batch GD: A middle ground that updates weights after a small group (batch) of examples.
+Momentum: Helps "push" the optimizer through flat regions or local minima by adding a fraction of the previous update to the current one.
+RMSProp: Adjusts the learning rate for each weight individually, slowing down updates for frequently changing weights to prevent oscillations.
+Adam (Adaptive Moment Estimation): The current "gold standard". It combines the benefits of Momentum and RMSProp, making it robust and efficient for most deep learning tasks
