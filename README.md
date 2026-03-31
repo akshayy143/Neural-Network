@@ -15,3 +15,9 @@ GPU CPU
 Optimizer
 
 Encoders
+
+all activation function
+
+forward backward prpogation
+
+
