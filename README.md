@@ -20,4 +20,6 @@ all activation function
 
 forward backward prpogation
 
+Adaptive momentum estimator
+
 
